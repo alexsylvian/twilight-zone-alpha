@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const lazerButton = document.getElementById('lazer-button')
 
     let currentUserNumber = 1
+    alexButton.disabled = true
 
     function renderEpisodeList(){
         fetch(`http://localhost:3000/users/${currentUserNumber}`)
@@ -41,18 +42,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     alexButton.addEventListener('click', () => {
+        alexButton.disabled = true
+        isaacButton.disabled = false
+        lazerButton.disabled = false
         currentUserNumber = 1
         twilightList.innerText = ''
         renderEpisodeList()
     })
 
     isaacButton.addEventListener('click', () => {
+        alexButton.disabled = false
+        isaacButton.disabled = true
+        lazerButton.disabled = false
         currentUserNumber = 2
         twilightList.innerText = ''
         renderEpisodeList()
     })
 
     lazerButton.addEventListener('click', () => {
+        alexButton.disabled = false
+        isaacButton.disabled = false
+        lazerButton.disabled = true
         currentUserNumber = 3
         twilightList.innerText = ''
         renderEpisodeList()
