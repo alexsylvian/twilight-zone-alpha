@@ -2,18 +2,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+}
   
-  .user-container button {
-    padding: 10px 20px;
-    background-color: black; /* Set the background color to black */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+.user-container button {
+  padding: 10px 20px;
+  background-color: black; /* Set the background color to black */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
   
-  .user-container button:hover {
-    background-color: #333; /* Darken the background color on hover */
-  }
+.user-container button:hover {
+  background-color: #333; /* Darken the background color on hover */
+}
+
+.cards {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
