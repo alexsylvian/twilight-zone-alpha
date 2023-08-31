@@ -1,10 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const twilightList= document.getElementById('cards')
+    const alexButton = document.getElementById('alex-button')
+    const isaacButton = document.getElementById('isaac-button')
+    const lazerButton = document.getElementById('lazer-button')
 
     let currentUserNumber = 1
 
     function renderEpisodeList(){
-        fetch('http://localhost:3000/users/1')
+        fetch(`http://localhost:3000/users/${currentUserNumber}`)
         .then(res => res.json())
         .then(user => {
             user.twilightZone.forEach(episode => {
@@ -26,12 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
         episodeCardImage.src = episode.image_url
         episodeCard.appendChild(episodeCardImage)
 
-        // let episodeCardSynopsis = document.createElement
+        let episodeCardSynopsis = document.createElement('p')
+        episodeCardSynopsis.textContent = episode.synopsis
+        episodeCard.appendChild(episodeCardSynopsis)
 
-        // let episodeCardReview =
+        let episodeCardReview = document.createElement('p')
+        episodeCardReview.textContent = episode.review
+        episodeCard.appendChild(episodeCardReview)
 
-        cards.appendChild(episodeCard)
+        twilightList.appendChild(episodeCard)
     }
+
+
 
     renderEpisodeList()
 })
