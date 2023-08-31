@@ -40,7 +40,23 @@ document.addEventListener('DOMContentLoaded', () => {
         twilightList.appendChild(episodeCard)
     }
 
+    alexButton.addEventListener('click', () => {
+        currentUserNumber = 1
+        twilightList.innerText = ''
+        renderEpisodeList()
+    })
 
+    isaacButton.addEventListener('click', () => {
+        currentUserNumber = 2
+        twilightList.innerText = ''
+        renderEpisodeList()
+    })
+
+    lazerButton.addEventListener('click', () => {
+        currentUserNumber = 3
+        twilightList.innerText = ''
+        renderEpisodeList()
+    })
 
     renderEpisodeList()
 })
