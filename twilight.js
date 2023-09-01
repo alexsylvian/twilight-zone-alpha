@@ -35,6 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
         episodeCardSynopsis.textContent = episode.synopsis
         episodeCard.appendChild(episodeCardSynopsis)
 
+        let episodeCardRating = document.createElement('p')
+        episodeCardRating.textContent = `Rating: ${episode.rating}/10`
+        episodeCard.appendChild(episodeCardRating)
+
         let episodeCardReview = document.createElement('p')
         episodeCardReview.textContent = episode.review
         episodeCard.appendChild(episodeCardReview)
@@ -58,11 +62,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 episodeCardCommentsContainer.appendChild(episodeCardComments);
             });
         
-            // Initially hide the comment container
             episodeCardCommentsContainer.style.display = 'none';
         }
 
         episodeCard.appendChild(episodeCardCommentsContainer)
+
+        const episodeCardCommentSectionButton = document.createElement('button')
+        episodeCardCommentSectionButton.textContent = 'Comment'
+        episodeCard.appendChild(episodeCardCommentSectionButton)
+        episodeCardCommentSectionButton.addEventListener('click', () => {
+            if (commentSection.style.display = 'none'){
+                commentSection.style.display = 'block'
+            }
+        })
+
+        const commentSection = document.createElement('form')
+        // commentSection.textContent = 'hide'
+        const commentArea = document.createElement('textarea')
+        commentSection.appendChild(commentArea)
+
+        const submitCommentButton = document.createElement('button')
+        submitCommentButton.textContent = "Submit Comment"
+        commentSection.appendChild(submitCommentButton)
+
+
+        episodeCard.appendChild(commentSection)
+        commentSection.style.display = 'none';
+        
 
         twilightList.appendChild(episodeCard)
     }

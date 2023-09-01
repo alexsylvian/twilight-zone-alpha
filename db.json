@@ -10,6 +10,7 @@
               "title": "Where Is Everybody?",
               "image_url": "https://m.media-amazon.com/images/M/MV5BMjM4NzA0OTMyNF5BMl5BanBnXkFtZTgwMDA2OTEyMjE@._V1_.jpg",
               "synopsis": "A man finds himself completely alone in a town that looks recently lived in.",
+              "rating": 7,
               "review": "A great start to a great show."
             },
             {
@@ -18,6 +19,7 @@
               "title": "One For The Angels",
               "image_url": "https://m.media-amazon.com/images/M/MV5BNjI1ZjE0NTMtYjVlYi00YTlmLThjMGMtNDA5NzdiODc5MmM2XkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
               "synopsis": "A sidewalk salesman is visited by Death. When he refuses to go, Death decides to take a little girl at midnight instead.",
+              "rating": 7,
               "review": "Good not great.",
               "comments": [
                 {
@@ -38,6 +40,7 @@
                 "title": "One For The Angels",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BNjI1ZjE0NTMtYjVlYi00YTlmLThjMGMtNDA5NzdiODc5MmM2XkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
                 "synopsis": "A sidewalk salesman is visited by Death. When he refuses to go, Death decides to take a little girl at midnight instead.",
+                "rating": 7,
                 "review": "Good not great."
               },
               {
@@ -46,6 +49,7 @@
                 "title": "One For The Angels",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BNjI1ZjE0NTMtYjVlYi00YTlmLThjMGMtNDA5NzdiODc5MmM2XkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
                 "synopsis": "A sidewalk salesman is visited by Death. When he refuses to go, Death decides to take a little girl at midnight instead.",
+                "rating": 7,
                 "review": "Good not great."
               },
               {
@@ -54,6 +58,7 @@
                 "title": "One For The Angels",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BNjI1ZjE0NTMtYjVlYi00YTlmLThjMGMtNDA5NzdiODc5MmM2XkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
                 "synopsis": "A sidewalk salesman is visited by Death. When he refuses to go, Death decides to take a little girl at midnight instead.",
+                "rating": 7,
                 "review": "Good not great."
               }
           ]
@@ -68,6 +73,7 @@
               "title": "Where Is Everybody?",
               "image_url": "https://m.media-amazon.com/images/M/MV5BMjM4NzA0OTMyNF5BMl5BanBnXkFtZTgwMDA2OTEyMjE@._V1_.jpg",
               "synopsis": "A man finds himself completely alone in a town that looks recently lived in.",
+              "rating": 7,
               "review": "Isaac says good."
             },
             {
@@ -76,6 +82,7 @@
               "title": "One For The Angels",
               "image_url": "https://m.media-amazon.com/images/M/MV5BNjI1ZjE0NTMtYjVlYi00YTlmLThjMGMtNDA5NzdiODc5MmM2XkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
               "synopsis": "A sidewalk salesman is visited by Death. When he refuses to go, Death decides to take a little girl at midnight instead.",
+              "rating": 7,
               "review": "Isaac says bad."
             }
           ]
@@ -90,6 +97,7 @@
               "title": "Where Is Everybody?",
               "image_url": "https://m.media-amazon.com/images/M/MV5BMjM4NzA0OTMyNF5BMl5BanBnXkFtZTgwMDA2OTEyMjE@._V1_.jpg",
               "synopsis": "A man finds himself completely alone in a town that looks recently lived in.",
+              "rating": 7,
               "review": "Lazer says Good."
             },
             {
@@ -98,6 +106,7 @@
               "title": "One For The Angels",
               "image_url": "https://m.media-amazon.com/images/M/MV5BNjI1ZjE0NTMtYjVlYi00YTlmLThjMGMtNDA5NzdiODc5MmM2XkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
               "synopsis": "A sidewalk salesman is visited by Death. When he refuses to go, Death decides to take a little girl at midnight instead.",
+              "rating": 7,
               "review": "Lazer says Bad."
             }
           ]
