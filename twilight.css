@@ -6,7 +6,7 @@
   
 .user-container button {
   padding: 10px 20px;
-  background-color: black; /* Set the background color to black */
+  background-color: black; 
   color: white;
   border: none;
   border-radius: 5px;
@@ -14,14 +14,14 @@
   transition: background-color 0.3s ease;
 }
   
-.user-container button:hover {
-  background-color: #333; /* Darken the background color on hover */
-}
+/* .user-container button:hover {
+  background-color: #333;
+} */
 
 .user-container button:disabled {
-  background-color: #ccc; /* Change the background color when disabled */
-  color: #666; /* Change the text color when disabled */
-  cursor: not-allowed; /* Change the cursor to indicate unavailability */
+  background-color: #ccc; 
+  color: #666; 
+  cursor: not-allowed;
 }
 
 .card-list {
@@ -31,7 +31,6 @@
   grid-gap: 20px;
 }
 
-/* Style for the episode cards */
 .episode-card {
   display: flex;
   flex-direction: column;
@@ -44,9 +43,9 @@
   transition: transform 0.3s ease;
 }
 
-.episode-card:hover {
+/* .episode-card:hover {
   transform: translateY(-5px);
-}
+} */
 
 .episode-card img {
   max-width: 100%;
@@ -63,4 +62,8 @@
 .episode-card p {
   margin-top: 10px;
   line-height: 1.4;
+}
+
+.episode-card .comment-section {
+  color: blue;
 }

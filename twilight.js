@@ -39,24 +39,27 @@ document.addEventListener('DOMContentLoaded', () => {
         episodeCardReview.textContent = episode.review
         episodeCard.appendChild(episodeCardReview)
 
-        // let episodeCardComments = document.createElement('p')
-        // episodeCardComments = episode.comment[1]
-        // episodeCard.appendChild(episodeCardComments)
-
         let episodeCardCommentsContainer = document.createElement('div')
         episodeCardCommentsContainer.className = 'comments-container'
 
         if (episode.comments){
             let episodeCardCommentsNumber = document.createElement('p')
+            episodeCardCommentsNumber.className = 'comment-section'
             episodeCardCommentsNumber.textContent = `This review has ${episode.comments.length} comments.`
             episodeCard.appendChild(episodeCardCommentsNumber)
 
-            
+            episodeCardCommentsNumber.addEventListener('click', () => {
+                episodeCardCommentsContainer.style.display = episodeCardCommentsContainer.style.display === 'none' ? 'block' : 'none';
+            });
+        
             episode.comments.forEach(comment => {
-                let episodeCardComments = document.createElement('p')
-                episodeCardComments.textContent = `${comment.author}: ${comment.comment}`
-                episodeCardCommentsContainer.appendChild(episodeCardComments)
-            })
+                let episodeCardComments = document.createElement('p');
+                episodeCardComments.textContent = `${comment.author}: ${comment.comment}`;
+                episodeCardCommentsContainer.appendChild(episodeCardComments);
+            });
+        
+            // Initially hide the comment container
+            episodeCardCommentsContainer.style.display = 'none';
         }
 
         episodeCard.appendChild(episodeCardCommentsContainer)
