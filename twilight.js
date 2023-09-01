@@ -71,19 +71,37 @@ document.addEventListener('DOMContentLoaded', () => {
         episodeCardCommentSectionButton.textContent = 'Comment'
         episodeCard.appendChild(episodeCardCommentSectionButton)
         episodeCardCommentSectionButton.addEventListener('click', () => {
-            if (commentSection.style.display = 'none'){
+            if (commentSection.style.display === 'none'){
                 commentSection.style.display = 'block'
             }
         })
 
         const commentSection = document.createElement('form')
-        // commentSection.textContent = 'hide'
+        commentSection.className = 'comments-form'
         const commentArea = document.createElement('textarea')
         commentSection.appendChild(commentArea)
 
         const submitCommentButton = document.createElement('button')
         submitCommentButton.textContent = "Submit Comment"
         commentSection.appendChild(submitCommentButton)
+
+        const identityLabel = document.createElement('label');
+identityLabel.textContent = 'Select Your Identity:';
+commentSection.appendChild(identityLabel);
+
+// Create the dropdown (select) element
+const identityDropdown = document.createElement('select');
+identityDropdown.name = 'identity'; // Set the name attribute for form submission
+identityLabel.appendChild(identityDropdown);
+
+// Create dropdown options
+const identityOptions = ['Alex', 'Isaac', 'Lazer'];
+identityOptions.forEach(optionText => {
+    const option = document.createElement('option');
+    option.value = optionText.toLowerCase();
+    option.textContent = optionText;
+    identityDropdown.appendChild(option);
+});
 
 
         episodeCard.appendChild(commentSection)
