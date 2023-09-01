@@ -46,6 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let episodeCardCommentsContainer = document.createElement('div')
         episodeCardCommentsContainer.className = 'comments-container'
 
+        let episodeCardCommentsHeader = document.createElement('p')
+        episodeCardCommentsHeader.className = 'comment-section-header'
+        episodeCardCommentsHeader.textContent = 'COMMENTS:'
+        episodeCardCommentsContainer.appendChild(episodeCardCommentsHeader)
+
         if (episode.comments){
             let episodeCardCommentsNumber = document.createElement('p')
             episodeCardCommentsNumber.className = 'comment-section'
@@ -57,9 +62,19 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         
             episode.comments.forEach(comment => {
-                let episodeCardComments = document.createElement('p');
-                episodeCardComments.textContent = `${comment.author}: ${comment.comment}`;
-                episodeCardCommentsContainer.appendChild(episodeCardComments);
+                let episodeCardComment = document.createElement('div')
+
+                let episodeCardCommentAuthor = document.createElement('p')
+                episodeCardCommentAuthor.className = 'comment-author'
+                episodeCardCommentAuthor.textContent = `${comment.author}:`
+                episodeCardComment.appendChild(episodeCardCommentAuthor)
+
+                let episodeCardCommentContent = document.createElement('p')
+                episodeCardCommentContent.className = 'comment-content'
+                episodeCardCommentContent.textContent = `${comment.comment}`
+                episodeCardComment.appendChild(episodeCardCommentContent)
+
+                episodeCardCommentsContainer.appendChild(episodeCardComment)
             });
         
             episodeCardCommentsContainer.style.display = 'none';
@@ -73,6 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
         episodeCardCommentSectionButton.addEventListener('click', () => {
             if (commentSection.style.display === 'none'){
                 commentSection.style.display = 'block'
+            }else{
+                commentSection.style.display = 'none'
             }
         })
 
@@ -99,19 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
             option.textContent = optionText
             commenterDropdown.appendChild(option)
         })
-
-    //     const identityDropdown = document.createElement('select');
-    //     identityDropdown.name = 'identity';
-    //     identityLabel.appendChild(identityDropdown);
-
-
-    //     const identityOptions = ['Alex', 'Isaac', 'Lazer'];
-    //     identityOptions.forEach(optionText => {
-    //     const option = document.createElement('option');
-    //     option.value = optionText.toLowerCase();
-    //     option.textContent = optionText;
-    //     identityDropdown.appendChild(option);
-    // });
 
         episodeCard.appendChild(commentSection)
         commentSection.style.display = 'none';
