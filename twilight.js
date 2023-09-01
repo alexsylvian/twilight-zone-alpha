@@ -39,6 +39,19 @@ document.addEventListener('DOMContentLoaded', () => {
         episodeCardRating.textContent = `Rating: ${episode.rating}/10`
         episodeCard.appendChild(episodeCardRating)
 
+        
+        const buttonContainer = document.createElement('div')
+        episodeCard.appendChild(buttonContainer)
+
+        const rateHigherButton = document.createElement('button')
+        rateHigherButton.textContent = '+'
+        buttonContainer.appendChild(rateHigherButton)
+
+        const rateLowerButton = document.createElement('button')
+        rateLowerButton.textContent = '-'
+        buttonContainer.appendChild(rateLowerButton)
+        
+
         let episodeCardReview = document.createElement('p')
         episodeCardReview.textContent = episode.review
         episodeCard.appendChild(episodeCardReview)
@@ -119,7 +132,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         episodeCard.appendChild(commentSection)
         commentSection.style.display = 'none';
-        
+
+        const deleteButton = document.createElement('button')
+        deleteButton.className = 'delete-button'
+        deleteButton.textContent = 'DELETE'
+        episodeCard.appendChild(deleteButton)
+        deleteButton.addEventListener('click', (e) => {
+            const confirmed = window.confirm('Are you sure you want to delete this episode?')
+            if (confirmed){
+                episodeCard.remove()
+            }
+        })
 
         twilightList.appendChild(episodeCard)
     }

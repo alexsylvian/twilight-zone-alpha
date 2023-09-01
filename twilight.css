@@ -135,13 +135,20 @@
   color: #007bff;
 }
 
-/* Style for comment content */
 .comment-content {
   margin-left: 15px;
 }
 
-/* Style for comment section header */
 .comment-section-header {
   font-weight: bold;
   margin-top: 15px;
+}
+
+.delete-button {
+  margin-top: 10px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }
