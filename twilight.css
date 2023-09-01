@@ -119,3 +119,18 @@
 .comments-container p {
   margin: 5px 0;
 }
+
+.comments-form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Style for the commenter dropdown */
+.comments-form select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+}

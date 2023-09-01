@@ -85,24 +85,33 @@ document.addEventListener('DOMContentLoaded', () => {
         submitCommentButton.textContent = "Submit Comment"
         commentSection.appendChild(submitCommentButton)
 
-        const identityLabel = document.createElement('label');
-identityLabel.textContent = 'Select Your Identity:';
-commentSection.appendChild(identityLabel);
+        const commenterLabel = document.createElement('label')
+        commenterLabel.textContent = 'Commenter:'
+        commentSection.appendChild(commenterLabel)
 
-// Create the dropdown (select) element
-const identityDropdown = document.createElement('select');
-identityDropdown.name = 'identity'; // Set the name attribute for form submission
-identityLabel.appendChild(identityDropdown);
+        const commenterDropdown = document.createElement('select')
+        commenterDropdown.name = 'commenter'
+        commenterLabel.appendChild(commenterDropdown)
 
-// Create dropdown options
-const identityOptions = ['Alex', 'Isaac', 'Lazer'];
-identityOptions.forEach(optionText => {
-    const option = document.createElement('option');
-    option.value = optionText.toLowerCase();
-    option.textContent = optionText;
-    identityDropdown.appendChild(option);
-});
+        const commenterOptions = ['Alex', 'Isaac', 'Lazer']
+        commenterOptions.forEach(optionText => {
+            const option = document.createElement('option');
+            option.textContent = optionText
+            commenterDropdown.appendChild(option)
+        })
 
+    //     const identityDropdown = document.createElement('select');
+    //     identityDropdown.name = 'identity';
+    //     identityLabel.appendChild(identityDropdown);
+
+
+    //     const identityOptions = ['Alex', 'Isaac', 'Lazer'];
+    //     identityOptions.forEach(optionText => {
+    //     const option = document.createElement('option');
+    //     option.value = optionText.toLowerCase();
+    //     option.textContent = optionText;
+    //     identityDropdown.appendChild(option);
+    // });
 
         episodeCard.appendChild(commentSection)
         commentSection.style.display = 'none';
