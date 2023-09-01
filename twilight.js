@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // episodeCard.textContent = episode.title
 
         let episodeCardTitle = document.createElement('div')
+        episodeCardTitle.className = 'card-header'
         episodeCardTitle.textContent = `Episode ${episode.number}: ${episode.title}`
         episodeCard.appendChild(episodeCardTitle)
 
@@ -37,6 +38,28 @@ document.addEventListener('DOMContentLoaded', () => {
         let episodeCardReview = document.createElement('p')
         episodeCardReview.textContent = episode.review
         episodeCard.appendChild(episodeCardReview)
+
+        // let episodeCardComments = document.createElement('p')
+        // episodeCardComments = episode.comment[1]
+        // episodeCard.appendChild(episodeCardComments)
+
+        let episodeCardCommentsContainer = document.createElement('div')
+        episodeCardCommentsContainer.className = 'comments-container'
+
+        if (episode.comments){
+            let episodeCardCommentsNumber = document.createElement('p')
+            episodeCardCommentsNumber.textContent = `This review has ${episode.comments.length} comments.`
+            episodeCard.appendChild(episodeCardCommentsNumber)
+
+            
+            episode.comments.forEach(comment => {
+                let episodeCardComments = document.createElement('p')
+                episodeCardComments.textContent = `${comment.author}: ${comment.comment}`
+                episodeCardCommentsContainer.appendChild(episodeCardComments)
+            })
+        }
+
+        episodeCard.appendChild(episodeCardCommentsContainer)
 
         twilightList.appendChild(episodeCard)
     }

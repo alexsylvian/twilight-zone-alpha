@@ -24,9 +24,43 @@
   cursor: not-allowed; /* Change the cursor to indicate unavailability */
 }
 
-.cards {
+.card-list {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
+}
+
+/* Style for the episode cards */
+.episode-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.episode-card:hover {
+  transform: translateY(-5px);
+}
+
+.episode-card img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.episode-card .card-header {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.episode-card p {
+  margin-top: 10px;
+  line-height: 1.4;
 }
