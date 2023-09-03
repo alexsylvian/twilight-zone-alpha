@@ -19,7 +19,7 @@
           "title": "One For The Angels",
           "image_url": "https://m.media-amazon.com/images/M/MV5BNjI1ZjE0NTMtYjVlYi00YTlmLThjMGMtNDA5NzdiODc5MmM2XkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
           "synopsis": "A sidewalk salesman is visited by Death. When he refuses to go, Death decides to take a little girl at midnight instead.",
-          "rating": 7,
+          "rating": 5,
           "review": "Good not great.",
           "comments": [
             {
@@ -35,13 +35,13 @@
           ]
         },
         {
-          "id": 3,
           "number": 103,
-          "title": "One For The Angels",
-          "image_url": "https://m.media-amazon.com/images/M/MV5BNjI1ZjE0NTMtYjVlYi00YTlmLThjMGMtNDA5NzdiODc5MmM2XkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
-          "synopsis": "A sidewalk salesman is visited by Death. When he refuses to go, Death decides to take a little girl at midnight instead.",
-          "rating": 7,
-          "review": "Good not great."
+          "title": "Mr. Denton On Doomsday",
+          "image_url": "https://m.media-amazon.com/images/M/MV5BMDk2MjIxYjctZjIwMS00NjI2LWJjZGUtMmNhNGZlYmY4N2JlXkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
+          "synopsis": "In the Old West, a quick-draw duelist is scared of a new challenger, but is offered a special potion that will make him the best shooter for 10 seconds.",
+          "rating": "7",
+          "review": "Martin Landau's so good in this.",
+          "id": 3
         }
       ]
     },

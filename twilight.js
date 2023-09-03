@@ -63,25 +63,54 @@ document.addEventListener('DOMContentLoaded', () => {
         rateHigherButton.textContent = '+'
         buttonContainer.appendChild(rateHigherButton)
 
-        rateHigherButton.addEventListener('click', () => {
+        rateHigherButton.addEventListener('click', (e) => {
+            const episodeID = e.target.parentElement.parentElement.id
+            console.log(episodeID)
             if (episodeRating < 10){
             episodeRating++
             episodeCardRating.textContent = `Rating: ${episodeRating}/10`
+            updateRating(e, episodeID)
             }
-            updateRating()
         })
 
         const rateLowerButton = document.createElement('button')
         rateLowerButton.textContent = '-'
         buttonContainer.appendChild(rateLowerButton)
 
-        rateLowerButton.addEventListener('click', () => {
+        rateLowerButton.addEventListener('click', (e) => {
+            const episodeID = e.target.parentElement.parentElement.id
+            console.log(episodeID)
             if (episodeRating > 0){
             episodeRating--
             episodeCardRating.textContent = `Rating: ${episodeRating}/10`
+            updateRating(e, episodeID)
             }
-            updateRating()
         })
+
+        function updateRating(e, episodeID){
+            fetch(`http://localhost:3000/users/${currentUserNumber}`)
+            .then(res => res.json())
+            .then(userData => {
+                userData.twilightZone.forEach(episode => {
+                    if (parseInt(episode.number) === parseInt(episodeID)){
+                        if(e.target.textContent === '+'){
+                            episode.rating++
+                            console.log(episode)
+                        }else{
+                            episode.rating--
+                            console.log(episode)
+                        }
+                        fetch(`http://localhost:3000/users/${currentUserNumber}`,{
+                        method: 'PATCH',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body:JSON.stringify(userData)
+                        })
+                    }
+                })
+            })
+        }
 
         let episodeCardReview = document.createElement('p')
         episodeCardReview.textContent = episode.review
