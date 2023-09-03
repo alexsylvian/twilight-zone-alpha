@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const lazerButton = document.getElementById('lazer-button')
     const addEpisodeButton = document.getElementById('episode-adder')
     const episodeSubmitterForm = document.getElementById('new-episode-submitter')
+    const episodeFinderForm = document.getElementById('episode-finder')
 
     let currentUserNumber = 1
     alexButton.disabled = true
@@ -187,6 +188,44 @@ document.addEventListener('DOMContentLoaded', () => {
         twilightList.innerText = ''
         renderEpisodeList()
     })
+
+    episodeFinderForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+        findEpisode()
+        episodeFinderForm.querySelector('#finder-episode').value = ''
+    })
+
+    function findEpisode(){
+        let episodeNumber = parseInt(episodeFinderForm.querySelector('#finder-episode').value)
+        let matchFound = false;
+        fetch(`http://localhost:3000/users/${currentUserNumber}`)
+        .then(res => res.json())
+        .then(userData => {
+            userData.twilightZone.forEach(episode => {
+                // console.log(episode.number)
+                // console.log(episodeNumber)
+                if (episode.number === episodeNumber){
+                    twilightList.innerText = ''
+                    renderEpisode(episode)
+                    matchFound = true;
+                }
+            })
+
+            if (matchFound === false){
+                {
+                    const noMatch = document.createElement('h1')
+                    noMatch.textContent = 'No Match Found'
+                    noMatch.style.textAlign = 'center'
+                    twilightList.innerText = ''
+                    twilightList.appendChild(noMatch)
+                    setTimeout(() => {
+                        twilightList.textContent = ''
+                        renderEpisodeList()
+                    }, 5000);
+                }
+            }
+        })
+    }
 
     renderEpisodeList()
 })
