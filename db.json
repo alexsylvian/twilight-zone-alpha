@@ -1,115 +1,179 @@
 {
-   "users": [
+  "users": [
+    {
+      "id": 1,
+      "username": "alex",
+      "twilightZone": [
         {
           "id": 1,
-          "username": "alex",
-          "twilightZone": [
-            {
-              "id": 1,
-              "number": 101,
-              "title": "Where Is Everybody?",
-              "image_url": "https://m.media-amazon.com/images/M/MV5BMjM4NzA0OTMyNF5BMl5BanBnXkFtZTgwMDA2OTEyMjE@._V1_.jpg",
-              "synopsis": "A man finds himself completely alone in a town that looks recently lived in.",
-              "rating": 7,
-              "review": "A great start to a great show."
-            },
-            {
-              "id": 2,
-              "number": 102,
-              "title": "One For The Angels",
-              "image_url": "https://m.media-amazon.com/images/M/MV5BNjI1ZjE0NTMtYjVlYi00YTlmLThjMGMtNDA5NzdiODc5MmM2XkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
-              "synopsis": "A sidewalk salesman is visited by Death. When he refuses to go, Death decides to take a little girl at midnight instead.",
-              "rating": 7,
-              "review": "Good not great.",
-              "comments": [
-                {
-                    "id": 1,
-                    "author": "Isaac",
-                    "comment": "Why didn't you like this one?"
-                },
-                {
-                    "id": 2,
-                    "author": "Alex",
-                    "comment": "Just a weak script, that's all"
-                }
-              ]
-            },
-            {
-                "id": 3,
-                "number": 103,
-                "title": "One For The Angels",
-                "image_url": "https://m.media-amazon.com/images/M/MV5BNjI1ZjE0NTMtYjVlYi00YTlmLThjMGMtNDA5NzdiODc5MmM2XkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
-                "synopsis": "A sidewalk salesman is visited by Death. When he refuses to go, Death decides to take a little girl at midnight instead.",
-                "rating": 7,
-                "review": "Good not great."
-              },
-              {
-                "id": 4,
-                "number": 104,
-                "title": "One For The Angels",
-                "image_url": "https://m.media-amazon.com/images/M/MV5BNjI1ZjE0NTMtYjVlYi00YTlmLThjMGMtNDA5NzdiODc5MmM2XkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
-                "synopsis": "A sidewalk salesman is visited by Death. When he refuses to go, Death decides to take a little girl at midnight instead.",
-                "rating": 7,
-                "review": "Good not great."
-              },
-              {
-                "id": 5,
-                "number": 105,
-                "title": "One For The Angels",
-                "image_url": "https://m.media-amazon.com/images/M/MV5BNjI1ZjE0NTMtYjVlYi00YTlmLThjMGMtNDA5NzdiODc5MmM2XkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
-                "synopsis": "A sidewalk salesman is visited by Death. When he refuses to go, Death decides to take a little girl at midnight instead.",
-                "rating": 7,
-                "review": "Good not great."
-              }
-          ]
+          "number": 101,
+          "title": "Where Is Everybody?",
+          "image_url": "https://m.media-amazon.com/images/M/MV5BMjM4NzA0OTMyNF5BMl5BanBnXkFtZTgwMDA2OTEyMjE@._V1_.jpg",
+          "synopsis": "A man finds himself completely alone in a town that looks recently lived in.",
+          "rating": 7,
+          "review": "A great start to a great show."
         },
         {
           "id": 2,
-          "username": "isaac",
-          "twilightZone": [
+          "number": 102,
+          "title": "One For The Angels",
+          "image_url": "https://m.media-amazon.com/images/M/MV5BNjI1ZjE0NTMtYjVlYi00YTlmLThjMGMtNDA5NzdiODc5MmM2XkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
+          "synopsis": "A sidewalk salesman is visited by Death. When he refuses to go, Death decides to take a little girl at midnight instead.",
+          "rating": 7,
+          "review": "Good not great.",
+          "comments": [
             {
               "id": 1,
-              "number": 101,
-              "title": "Where Is Everybody?",
-              "image_url": "https://m.media-amazon.com/images/M/MV5BMjM4NzA0OTMyNF5BMl5BanBnXkFtZTgwMDA2OTEyMjE@._V1_.jpg",
-              "synopsis": "A man finds himself completely alone in a town that looks recently lived in.",
-              "rating": 7,
-              "review": "Isaac says good."
+              "author": "Isaac",
+              "comment": "Why didn't you like this one?"
             },
             {
               "id": 2,
-              "number": 102,
-              "title": "One For The Angels",
-              "image_url": "https://m.media-amazon.com/images/M/MV5BNjI1ZjE0NTMtYjVlYi00YTlmLThjMGMtNDA5NzdiODc5MmM2XkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
-              "synopsis": "A sidewalk salesman is visited by Death. When he refuses to go, Death decides to take a little girl at midnight instead.",
-              "rating": 7,
-              "review": "Isaac says bad."
+              "author": "Alex",
+              "comment": "Just a weak script, that's all"
             }
           ]
         },
         {
           "id": 3,
-          "username": "lazer",
-          "twilightZone": [
-            {
-              "id": 1,
-              "number": 101,
-              "title": "Where Is Everybody?",
-              "image_url": "https://m.media-amazon.com/images/M/MV5BMjM4NzA0OTMyNF5BMl5BanBnXkFtZTgwMDA2OTEyMjE@._V1_.jpg",
-              "synopsis": "A man finds himself completely alone in a town that looks recently lived in.",
-              "rating": 7,
-              "review": "Lazer says Good."
-            },
-            {
-              "id": 2,
-              "number": 102,
-              "title": "One For The Angels",
-              "image_url": "https://m.media-amazon.com/images/M/MV5BNjI1ZjE0NTMtYjVlYi00YTlmLThjMGMtNDA5NzdiODc5MmM2XkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
-              "synopsis": "A sidewalk salesman is visited by Death. When he refuses to go, Death decides to take a little girl at midnight instead.",
-              "rating": 7,
-              "review": "Lazer says Bad."
-            }
-          ]
+          "number": 103,
+          "title": "One For The Angels",
+          "image_url": "https://m.media-amazon.com/images/M/MV5BNjI1ZjE0NTMtYjVlYi00YTlmLThjMGMtNDA5NzdiODc5MmM2XkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
+          "synopsis": "A sidewalk salesman is visited by Death. When he refuses to go, Death decides to take a little girl at midnight instead.",
+          "rating": 7,
+          "review": "Good not great."
+        },
+        {
+          "id": 4,
+          "number": 104,
+          "title": "One For The Angels",
+          "image_url": "https://m.media-amazon.com/images/M/MV5BNjI1ZjE0NTMtYjVlYi00YTlmLThjMGMtNDA5NzdiODc5MmM2XkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
+          "synopsis": "A sidewalk salesman is visited by Death. When he refuses to go, Death decides to take a little girl at midnight instead.",
+          "rating": 7,
+          "review": "Good not great."
+        },
+        {
+          "id": 5,
+          "number": 105,
+          "title": "One For The Angels",
+          "image_url": "https://m.media-amazon.com/images/M/MV5BNjI1ZjE0NTMtYjVlYi00YTlmLThjMGMtNDA5NzdiODc5MmM2XkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
+          "synopsis": "A sidewalk salesman is visited by Death. When he refuses to go, Death decides to take a little girl at midnight instead.",
+          "rating": 7,
+          "review": "Good not great."
+        },
+        {
+          "number": "1",
+          "title": "45555555555555555555",
+          "image_url": "",
+          "synopsis": "",
+          "rating": "",
+          "review": ""
         }
       ]
+    },
+    {
+      "id": 2,
+      "username": "isaac",
+      "twilightZone": [
+        {
+          "id": 1,
+          "number": 101,
+          "title": "Where Is Everybody?",
+          "image_url": "https://m.media-amazon.com/images/M/MV5BMjM4NzA0OTMyNF5BMl5BanBnXkFtZTgwMDA2OTEyMjE@._V1_.jpg",
+          "synopsis": "A man finds himself completely alone in a town that looks recently lived in.",
+          "rating": 7,
+          "review": "Isaac says good."
+        },
+        {
+          "id": 2,
+          "number": 102,
+          "title": "One For The Angels",
+          "image_url": "https://m.media-amazon.com/images/M/MV5BNjI1ZjE0NTMtYjVlYi00YTlmLThjMGMtNDA5NzdiODc5MmM2XkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
+          "synopsis": "A sidewalk salesman is visited by Death. When he refuses to go, Death decides to take a little girl at midnight instead.",
+          "rating": 7,
+          "review": "Isaac says bad."
+        },
+        {
+          "number": "1",
+          "title": "gf",
+          "image_url": "",
+          "synopsis": "",
+          "rating": "",
+          "review": ""
+        },
+        {
+          "number": "1",
+          "title": "gf",
+          "image_url": "",
+          "synopsis": "",
+          "rating": "",
+          "review": ""
+        },
+        {
+          "number": "1",
+          "title": "gf",
+          "image_url": "",
+          "synopsis": "",
+          "rating": "",
+          "review": ""
+        },
+        {
+          "number": "1",
+          "title": "gf",
+          "image_url": "",
+          "synopsis": "",
+          "rating": "",
+          "review": ""
+        },
+        {
+          "number": "1",
+          "title": "fffjjkh",
+          "image_url": "",
+          "synopsis": "",
+          "rating": "",
+          "review": ""
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "username": "lazer",
+      "twilightZone": [
+        {
+          "id": 1,
+          "number": 101,
+          "title": "Where Is Everybody?",
+          "image_url": "https://m.media-amazon.com/images/M/MV5BMjM4NzA0OTMyNF5BMl5BanBnXkFtZTgwMDA2OTEyMjE@._V1_.jpg",
+          "synopsis": "A man finds himself completely alone in a town that looks recently lived in.",
+          "rating": 7,
+          "review": "Lazer says Good."
+        },
+        {
+          "id": 2,
+          "number": 102,
+          "title": "One For The Angels",
+          "image_url": "https://m.media-amazon.com/images/M/MV5BNjI1ZjE0NTMtYjVlYi00YTlmLThjMGMtNDA5NzdiODc5MmM2XkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
+          "synopsis": "A sidewalk salesman is visited by Death. When he refuses to go, Death decides to take a little girl at midnight instead.",
+          "rating": 7,
+          "review": "Lazer says Bad."
+        },
+        {
+          "number": "109",
+          "title": "A Silly One",
+          "image_url": "",
+          "synopsis": "",
+          "rating": "",
+          "review": ""
+        },
+        {
+          "number": 1010,
+          "title": "LO",
+          "image_url": "",
+          "synopsis": "",
+          "rating": "",
+          "review": ""
+        }
+      ]
+    }
+  ]
 }

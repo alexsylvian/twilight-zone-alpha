@@ -192,23 +192,39 @@ document.addEventListener('DOMContentLoaded', () => {
     episodeSubmitterForm.addEventListener('submit', (e) => {
         e.preventDefault()
         let newEpisodeObject = {
-            number:e.target.episode.value,
+            number:parseInt(e.target.episode.value),
             title:e.target.title.value,
             image_url:e.target.image_url.value,
             synopsis:e.target.synopsis.value,
             rating:e.target.rating.value,
             review:e.target.review.value
         }
-        console.log(newEpisodeObject)
-        // addNewEpisode(newEpisodeObject)
+        // console.log(newEpisodeObject)
+        addNewEpisode(newEpisodeObject)
     })
 
-    // function addNewEpisode(newEpisodeObject){
-    //     fetch(`http://localhost:3000/users/${currentUserNumber}`
-    //     .then()
-        
-    //     )
-    // }
+    function addNewEpisode(newEpisodeObject){
+        if (newEpisodeObject.title){
+            fetch(`http://localhost:3000/users/${currentUserNumber}`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                data.twilightZone.push(newEpisodeObject)
+                console.log(data)
+                fetch(`http://localhost:3000/users/${currentUserNumber}`,{
+                    method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body:JSON.stringify(data)
+                })
+            })
+            setTimeout(() => {
+                twilightList.innerText = ''
+                renderEpisodeList()
+            }, 500);
+        }
+    }
 
     episodeFinderForm.addEventListener('submit', (e) => {
         e.preventDefault()
@@ -225,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
             userData.twilightZone.forEach(episode => {
                 // console.log(episode.number)
                 // console.log(episodeNumber)
-                if (episode.number === episodeNumber){
+                if (parseInt(episode.number) === episodeNumber){
                     twilightList.innerText = ''
                     renderEpisode(episode)
                     matchFound = true;
