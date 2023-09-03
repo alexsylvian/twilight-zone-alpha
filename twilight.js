@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const episodeSubmitterForm = document.getElementById('new-episode-submitter')
     const episodeFinderForm = document.getElementById('episode-finder')
 
-    let currentUserNumber = 1
-    alexButton.disabled = true
+    let currentUserNumber = 3
+    lazerButton.disabled = true
 
     episodeSubmitterForm.style.display = 'none'
 
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderEpisode(episode){
         let episodeCard = document.createElement('li')
         episodeCard.className = "episode-card"
-        // episodeCard.textContent = episode.title
+        episodeCard.id = parseInt(episode.number)
 
         let episodeCardTitle = document.createElement('div')
         episodeCardTitle.className = 'card-header'
@@ -156,6 +156,33 @@ document.addEventListener('DOMContentLoaded', () => {
             const confirmed = window.confirm('Are you sure you want to delete this episode?')
             if (confirmed){
                 episodeCard.remove()
+                let episodeID = e.target.parentElement.id
+                console.log(episodeID)
+
+                fetch(`http://localhost:3000/users/${currentUserNumber}`)
+                .then(res => res.json())
+                .then(userData => {
+                    console.log(userData)
+                    console.log(userData.twilightZone)
+                    const newUserData = { twilightZone: [] }
+                    userData.twilightZone.forEach(episode => {
+                        console.log(episode.number)
+                        if (parseInt(episode.number) !== parseInt(episodeID)){
+                            newUserData.twilightZone.push(episode)
+                        }
+                        console.log(episode.number)
+                        console.log(userData)
+                        console.log(newUserData)
+                        console.log(userData)
+                        fetch(`http://localhost:3000/users/${currentUserNumber}`,{
+                        method: 'PATCH',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body:JSON.stringify(newUserData)
+                        })
+                    })
+                })
             }
         })
 
@@ -199,7 +226,6 @@ document.addEventListener('DOMContentLoaded', () => {
             rating:e.target.rating.value,
             review:e.target.review.value
         }
-        // console.log(newEpisodeObject)
         addNewEpisode(newEpisodeObject)
     })
 
@@ -207,16 +233,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (newEpisodeObject.title){
             fetch(`http://localhost:3000/users/${currentUserNumber}`)
             .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                data.twilightZone.push(newEpisodeObject)
-                console.log(data)
+            .then(userData => {
+                console.log(userData)
+                newEpisodeObject.id = userData.twilightZone.length + 1
+                userData.twilightZone.push(newEpisodeObject)
+                console.log(userData)
                 fetch(`http://localhost:3000/users/${currentUserNumber}`,{
                     method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body:JSON.stringify(data)
+                body:JSON.stringify(userData)
                 })
             })
             setTimeout(() => {
@@ -239,8 +266,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(res => res.json())
         .then(userData => {
             userData.twilightZone.forEach(episode => {
-                // console.log(episode.number)
-                // console.log(episodeNumber)
                 if (parseInt(episode.number) === episodeNumber){
                     twilightList.innerText = ''
                     renderEpisode(episode)
