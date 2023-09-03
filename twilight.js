@@ -189,6 +189,27 @@ document.addEventListener('DOMContentLoaded', () => {
         renderEpisodeList()
     })
 
+    episodeSubmitterForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+        let newEpisodeObject = {
+            number:e.target.episode.value,
+            title:e.target.title.value,
+            image_url:e.target.image_url.value,
+            synopsis:e.target.synopsis.value,
+            rating:e.target.rating.value,
+            review:e.target.review.value
+        }
+        console.log(newEpisodeObject)
+        // addNewEpisode(newEpisodeObject)
+    })
+
+    // function addNewEpisode(newEpisodeObject){
+    //     fetch(`http://localhost:3000/users/${currentUserNumber}`
+    //     .then()
+        
+    //     )
+    // }
+
     episodeFinderForm.addEventListener('submit', (e) => {
         e.preventDefault()
         findEpisode()
