@@ -270,7 +270,12 @@ document.addEventListener('DOMContentLoaded', () => {
             rating:e.target.rating.value,
             review:e.target.review.value
         }
-        addNewEpisode(newEpisodeObject)
+        // console.log(!isNaN(newEpisodeObject.number))
+        if (!isNaN(newEpisodeObject.number)){
+            // console.log(newEpisodeObject.number)
+            addNewEpisode(newEpisodeObject)
+        }
+        episodeSubmitterForm.reset()
     })
 
     function addNewEpisode(newEpisodeObject){

@@ -36,12 +36,30 @@
         },
         {
           "number": 103,
-          "title": "Mr. Denton On Doomsday",
-          "image_url": "https://m.media-amazon.com/images/M/MV5BMDk2MjIxYjctZjIwMS00NjI2LWJjZGUtMmNhNGZlYmY4N2JlXkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
-          "synopsis": "In the Old West, a quick-draw duelist is scared of a new challenger, but is offered a special potion that will make him the best shooter for 10 seconds.",
-          "rating": "7",
+          "title": "Mr. Denton on Domsday",
+          "image_url": "https://m.media-amazon.com/images/M/MV5BZTk3NzgyMTUtY2E2MS00NjcwLTgyOGQtN2Y2OTY3YzAzYmJiXkEyXkFqcGdeQXVyNjUxMjc1OTM@._V1_.jpg",
+          "synopsis": "A shut-in has-been actress is obsessed with her old movies.",
+          "rating": 6,
           "review": "Martin Landau's so good in this.",
           "id": 3
+        },
+        {
+          "number": 104,
+          "title": "The Sixteen-Millimeter Shrine",
+          "image_url": "https://m.media-amazon.com/images/M/MV5BZTk3NzgyMTUtY2E2MS00NjcwLTgyOGQtN2Y2OTY3YzAzYmJiXkEyXkFqcGdeQXVyNjUxMjc1OTM@._V1_.jpg",
+          "synopsis": "A shut-in has-been actress is obsessed with her old movies.",
+          "rating": 8,
+          "review": "Can you imagine the guys who had to go ask Ida Lupino if she could play an old has-been actress?",
+          "id": 4
+        },
+        {
+          "number": 5,
+          "title": "",
+          "image_url": "",
+          "synopsis": "",
+          "rating": "",
+          "review": "",
+          "id": 6
         }
       ]
     },
