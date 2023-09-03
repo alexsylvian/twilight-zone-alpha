@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const episodeSubmitterForm = document.getElementById('new-episode-submitter')
     const episodeFinderForm = document.getElementById('episode-finder')
 
-    let currentUserNumber = 3
-    lazerButton.disabled = true
+    let currentUserNumber = 1
+    alexButton.disabled = true
 
     episodeSubmitterForm.style.display = 'none'
 
@@ -86,7 +86,13 @@ document.addEventListener('DOMContentLoaded', () => {
             episodeCard.appendChild(episodeCardCommentsNumber)
 
             episodeCardCommentsNumber.addEventListener('click', () => {
-                episodeCardCommentsContainer.style.display = episodeCardCommentsContainer.style.display === 'none' ? 'block' : 'none';
+                if (episodeCardCommentsContainer.style.display === 'none'){
+                    episodeCardCommentsContainer.style.display = 'block'
+                    episodeCardCommentsNumber.textContent = 'Hide Comments'
+                }else{
+                    episodeCardCommentsContainer.style.display = 'none'
+                    episodeCardCommentsNumber.textContent = `This review has ${episode.comments.length} comments.`
+                }
             });
         
             episode.comments.forEach(comment => {
@@ -162,18 +168,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 fetch(`http://localhost:3000/users/${currentUserNumber}`)
                 .then(res => res.json())
                 .then(userData => {
-                    console.log(userData)
-                    console.log(userData.twilightZone)
                     const newUserData = { twilightZone: [] }
                     userData.twilightZone.forEach(episode => {
-                        console.log(episode.number)
                         if (parseInt(episode.number) !== parseInt(episodeID)){
                             newUserData.twilightZone.push(episode)
                         }
-                        console.log(episode.number)
-                        console.log(userData)
-                        console.log(newUserData)
-                        console.log(userData)
                         fetch(`http://localhost:3000/users/${currentUserNumber}`,{
                         method: 'PATCH',
                         headers: {
@@ -234,10 +233,8 @@ document.addEventListener('DOMContentLoaded', () => {
             fetch(`http://localhost:3000/users/${currentUserNumber}`)
             .then(res => res.json())
             .then(userData => {
-                console.log(userData)
                 newEpisodeObject.id = userData.twilightZone.length + 1
                 userData.twilightZone.push(newEpisodeObject)
-                console.log(userData)
                 fetch(`http://localhost:3000/users/${currentUserNumber}`,{
                     method: 'PATCH',
                 headers: {
