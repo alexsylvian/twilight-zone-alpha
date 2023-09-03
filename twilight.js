@@ -3,9 +3,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const alexButton = document.getElementById('alex-button')
     const isaacButton = document.getElementById('isaac-button')
     const lazerButton = document.getElementById('lazer-button')
+    const addEpisodeButton = document.getElementById('episode-adder')
+    const episodeSubmitterForm = document.getElementById('new-episode-submitter')
 
     let currentUserNumber = 1
     alexButton.disabled = true
+
+    episodeSubmitterForm.style.display = 'none'
+
+    addEpisodeButton.addEventListener('click', () => {
+        if (episodeSubmitterForm.style.display === 'none'){
+            episodeSubmitterForm.style.display = 'block'
+            addEpisodeButton.textContent = 'Hide'
+        }else{
+            episodeSubmitterForm.style.display = 'none'
+            addEpisodeButton.textContent = 'Add New Episode'
+        }
+    })
 
     function renderEpisodeList(){
         fetch(`http://localhost:3000/users/${currentUserNumber}`)

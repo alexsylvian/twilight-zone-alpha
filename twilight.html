@@ -18,7 +18,9 @@
             </div>
         </header>
         <div class="episode-submitter-container">
+            <button id="episode-adder">Add New Episode</button>
             <form id="new-episode-submitter">
+                <h2>Add New Episode</h2>
                 <label for="episode">Episode</label>
                 <input type="text" id="episode" name="episode">
                 <label for="title">Title</label>
@@ -30,11 +32,12 @@
                 <label for="rating">Rating</label>
                 <input type="text" id="rating" name="rating">
                 <label for="review">Review</label>
-                <input type="text" id="review" name="review">
+                <textarea id="review" name="review"></textarea>
                 <button>Submit</button>
             </form>
         </div>
         <div class="episode-finder-container">
+            <h3>Find Episode</h3>
             <form id="episode-finder">
                 <label for="finder-episode">Episode</label>
                 <input type="text" id="finder-episode" name="finder-episode">
