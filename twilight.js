@@ -50,10 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
         episodeCardSynopsis.textContent = episode.synopsis
         episodeCard.appendChild(episodeCardSynopsis)
 
-        let episodeCardRating = document.createElement('p')
-        episodeCardRating.textContent = `Rating: ${episode.rating}/10`
-        episodeCard.appendChild(episodeCardRating)
+        let episodeRating = episode.rating
 
+        let episodeCardRating = document.createElement('p')
+        episodeCardRating.textContent = `Rating: ${episodeRating}/10`
+        episodeCard.appendChild(episodeCardRating)
         
         const buttonContainer = document.createElement('div')
         episodeCard.appendChild(buttonContainer)
@@ -62,10 +63,25 @@ document.addEventListener('DOMContentLoaded', () => {
         rateHigherButton.textContent = '+'
         buttonContainer.appendChild(rateHigherButton)
 
+        rateHigherButton.addEventListener('click', () => {
+            if (episodeRating < 10){
+            episodeRating++
+            episodeCardRating.textContent = `Rating: ${episodeRating}/10`
+            }
+            updateRating()
+        })
+
         const rateLowerButton = document.createElement('button')
         rateLowerButton.textContent = '-'
         buttonContainer.appendChild(rateLowerButton)
-        
+
+        rateLowerButton.addEventListener('click', () => {
+            if (episodeRating > 0){
+            episodeRating--
+            episodeCardRating.textContent = `Rating: ${episodeRating}/10`
+            }
+            updateRating()
+        })
 
         let episodeCardReview = document.createElement('p')
         episodeCardReview.textContent = episode.review
