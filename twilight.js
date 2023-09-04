@@ -125,6 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
         episodeCardCommentsContainer.appendChild(episodeCardCommentsHeader)
 
         if (episode.comments){
+            createComments()
+            function createComments(){
             let episodeCardCommentsNumber = document.createElement('p')
             episodeCardCommentsNumber.className = 'comment-section'
             episodeCardCommentsNumber.textContent = `This review has ${episode.comments.length} comments.`
@@ -157,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         
             episodeCardCommentsContainer.style.display = 'none';
-        }
+        }}
 
         episodeCard.appendChild(episodeCardCommentsContainer)
 
@@ -174,6 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const commentSection = document.createElement('form')
         commentSection.className = 'comments-form'
+
         const commentArea = document.createElement('textarea')
         commentSection.appendChild(commentArea)
 
@@ -198,6 +201,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
         episodeCard.appendChild(commentSection)
         commentSection.style.display = 'none';
+
+        commentSection.addEventListener('submit', (e) => {
+            e.preventDefault()
+
+            let newCommentObject = {
+                author:commenterDropdown.value,
+                comment:commentArea.value
+            }
+            console.log(newCommentObject)
+            addComment(e, newCommentObject)
+        })
+
+        function addComment(e, newCommentObject){
+            const episodeID = e.target.parentElement.id
+            console.log(episodeID)
+            fetch(`http://localhost:3000/users/${currentUserNumber}`)
+            .then(res => res.json())
+            .then(userData => {
+                userData.twilightZone.forEach(episode => {
+                    if (parseInt(episodeID) === parseInt(episode.number)){
+                        console.log(episode.comments)
+                        console.log(episode.comments[0])
+                        fetch(`http://localhost:3000/users/${currentUserNumber}`,{
+                        method: 'PATCH',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body:JSON.stringify(newCommentObject)
+                        })
+                        twilightList.textContent = ''
+                        renderEpisodeList()
+                    }
+                })
+            })
+        }
 
         const deleteButton = document.createElement('button')
         deleteButton.className = 'delete-button'
@@ -270,9 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
             rating:e.target.rating.value,
             review:e.target.review.value
         }
-        // console.log(!isNaN(newEpisodeObject.number))
         if (!isNaN(newEpisodeObject.number)){
-            // console.log(newEpisodeObject.number)
             addNewEpisode(newEpisodeObject)
         }
         episodeSubmitterForm.reset()

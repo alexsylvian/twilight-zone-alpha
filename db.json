@@ -37,7 +37,7 @@
         {
           "number": 103,
           "title": "Mr. Denton on Domsday",
-          "image_url": "https://m.media-amazon.com/images/M/MV5BZTk3NzgyMTUtY2E2MS00NjcwLTgyOGQtN2Y2OTY3YzAzYmJiXkEyXkFqcGdeQXVyNjUxMjc1OTM@._V1_.jpg",
+          "image_url": "https://m.media-amazon.com/images/M/MV5BMDk2MjIxYjctZjIwMS00NjI2LWJjZGUtMmNhNGZlYmY4N2JlXkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
           "synopsis": "A shut-in has-been actress is obsessed with her old movies.",
           "rating": 6,
           "review": "Martin Landau's so good in this.",
@@ -61,7 +61,9 @@
           "review": "",
           "id": 6
         }
-      ]
+      ],
+      "author": "Alex",
+      "comment": ""
     },
     {
       "id": 2,
