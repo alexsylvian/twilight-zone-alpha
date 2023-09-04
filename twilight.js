@@ -33,6 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderEpisode(episode){
+        let numberOfComments = 1
+
         let episodeCard = document.createElement('li')
         episodeCard.className = "episode-card"
         episodeCard.id = parseInt(episode.number)
@@ -125,12 +127,12 @@ document.addEventListener('DOMContentLoaded', () => {
         episodeCardCommentsContainer.appendChild(episodeCardCommentsHeader)
 
         if (episode.comments){
-            createComments()
-            function createComments(){
+
             let episodeCardCommentsNumber = document.createElement('p')
+            episodeCardCommentsNumber.id = `comments-${episodeCard.id}`
             episodeCardCommentsNumber.className = 'comment-section'
-            episodeCardCommentsNumber.textContent = `This review has ${episode.comments.length} comments.`
-            episodeCard.appendChild(episodeCardCommentsNumber)
+            episodeCardCommentsNumber.textContent = `See Comments`
+            episodeCardReview.appendChild(episodeCardCommentsNumber)
 
             episodeCardCommentsNumber.addEventListener('click', () => {
                 if (episodeCardCommentsContainer.style.display === 'none'){
@@ -138,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     episodeCardCommentsNumber.textContent = 'Hide Comments'
                 }else{
                     episodeCardCommentsContainer.style.display = 'none'
-                    episodeCardCommentsNumber.textContent = `This review has ${episode.comments.length} comments.`
+                    episodeCardCommentsNumber.textContent = `See Comments`
                 }
             });
         
@@ -159,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         
             episodeCardCommentsContainer.style.display = 'none';
-        }}
+        }
 
         episodeCard.appendChild(episodeCardCommentsContainer)
 
@@ -209,29 +211,66 @@ document.addEventListener('DOMContentLoaded', () => {
                 author:commenterDropdown.value,
                 comment:commentArea.value
             }
-            console.log(newCommentObject)
-            addComment(e, newCommentObject)
+            // console.log(newCommentObject)
+
+            let episodeCardComment = document.createElement('div')
+
+            let episodeCardCommentAuthor = document.createElement('p')
+            episodeCardCommentAuthor.className = 'comment-author'
+            episodeCardCommentAuthor.textContent = `${newCommentObject.author}:`
+            episodeCardComment.appendChild(episodeCardCommentAuthor)
+
+            let episodeCardCommentContent = document.createElement('p')
+            episodeCardCommentContent.className = 'comment-content'
+            episodeCardCommentContent.textContent = `${newCommentObject.comment}`
+            episodeCardComment.appendChild(episodeCardCommentContent)
+
+            episodeCardCommentsContainer.appendChild(episodeCardComment)
+
+            episodeCardCommentsContainer.style.display = 'block'
+
+            let episodeCardCommentsNumber = episodeCard.querySelector(`#comments-${episodeCard.id}`)
+
+            if (episodeCardCommentsNumber){
+                console.log('hooray')
+            }else{
+                let episodeCardCommentsNumber = document.createElement('p')
+                episodeCardCommentsNumber.id = `comments-${episodeCard.id}`
+                episodeCardCommentsNumber.className = 'comment-section'
+                episodeCardCommentsNumber.textContent = 'Hide Comments'
+                episodeCardReview.append(episodeCardCommentsNumber)
+
+                episodeCardCommentsNumber.addEventListener('click', () => {
+                    if (episodeCardCommentsContainer.style.display === 'none'){
+                        episodeCardCommentsContainer.style.display = 'block'
+                        episodeCardCommentsNumber.textContent = 'Hide Comments'
+                    }else{
+                        episodeCardCommentsContainer.style.display = 'none'
+                        episodeCardCommentsNumber.textContent = 'See Comments'
+                    }
+                });
+            }
+
+            addCommentToJSON(e, newCommentObject)
+
+            commentSection.reset()
         })
 
-        function addComment(e, newCommentObject){
+        function addCommentToJSON(e, newCommentObject){
             const episodeID = e.target.parentElement.id
-            console.log(episodeID)
+            // console.log(episodeID)
             fetch(`http://localhost:3000/users/${currentUserNumber}`)
             .then(res => res.json())
             .then(userData => {
                 userData.twilightZone.forEach(episode => {
                     if (parseInt(episodeID) === parseInt(episode.number)){
-                        console.log(episode.comments)
-                        console.log(episode.comments[0])
-                        fetch(`http://localhost:3000/users/${currentUserNumber}`,{
-                        method: 'PATCH',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body:JSON.stringify(newCommentObject)
-                        })
-                        twilightList.textContent = ''
-                        renderEpisodeList()
+                        // console.log(episode.comments)
+                        episode.comments.push(newCommentObject)
+                        // console.log(episode.comments)
+
+                        
+                        // twilightList.textContent = ''
+                        // renderEpisodeList()
                     }
                 })
             })
