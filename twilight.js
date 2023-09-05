@@ -67,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         rateHigherButton.addEventListener('click', (e) => {
             const episodeID = e.target.parentElement.parentElement.id
-            console.log(episodeID)
             if (episodeRating < 10){
             episodeRating++
             episodeCardRating.textContent = `Rating: ${episodeRating}/10`
@@ -81,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         rateLowerButton.addEventListener('click', (e) => {
             const episodeID = e.target.parentElement.parentElement.id
-            console.log(episodeID)
             if (episodeRating > 0){
             episodeRating--
             episodeCardRating.textContent = `Rating: ${episodeRating}/10`
@@ -97,10 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (parseInt(episode.number) === parseInt(episodeID)){
                         if(e.target.textContent === '+'){
                             episode.rating++
-                            console.log(episode)
                         }else{
                             episode.rating--
-                            console.log(episode)
                         }
                         fetch(`http://localhost:3000/users/${currentUserNumber}`,{
                         method: 'PATCH',
@@ -211,7 +207,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 author:commenterDropdown.value,
                 comment:commentArea.value
             }
-            // console.log(newCommentObject)
 
             let episodeCardComment = document.createElement('div')
 
@@ -232,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let episodeCardCommentsNumber = episodeCard.querySelector(`#comments-${episodeCard.id}`)
 
             if (episodeCardCommentsNumber){
-                console.log('hooray')
+                console.log('')
             }else{
                 let episodeCardCommentsNumber = document.createElement('p')
                 episodeCardCommentsNumber.id = `comments-${episodeCard.id}`
@@ -273,16 +268,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         const updatedTwilightZone = userData.twilightZone.map(ep => {
                             if (ep.number === parseInt(episodeID)) {
-                                return episode; // Use the updated episode
+                                return episode
                             } else {
-                                return ep; // Use the unchanged episodes
+                                return ep
                             }
                         });
-            
-                        // Update the userData with the updated Twilight Zone episodes
+
                         userData.twilightZone = updatedTwilightZone;
-            
-                        // Send the updated userData back to the server
+
                         fetch(`http://localhost:3000/users/${currentUserNumber}`, {
                             method: 'PATCH',
                             headers: {
@@ -290,10 +283,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             },
                             body: JSON.stringify(userData)
                         })
-
-                        
-                        // twilightList.textContent = ''
-                        // renderEpisodeList()
                     }
                 })
             })
@@ -308,7 +297,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (confirmed){
                 episodeCard.remove()
                 let episodeID = e.target.parentElement.id
-                console.log(episodeID)
 
                 fetch(`http://localhost:3000/users/${currentUserNumber}`)
                 .then(res => res.json())
