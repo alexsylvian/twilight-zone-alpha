@@ -264,9 +264,32 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(userData => {
                 userData.twilightZone.forEach(episode => {
                     if (parseInt(episodeID) === parseInt(episode.number)){
-                        // console.log(episode.comments)
+                        if (!episode.comments) {
+                            episode.comments = []
+                        }
+                        console.log(episode.comments)
                         episode.comments.push(newCommentObject)
-                        // console.log(episode.comments)
+                        console.log(episode.comments)
+
+                        const updatedTwilightZone = userData.twilightZone.map(ep => {
+                            if (ep.number === parseInt(episodeID)) {
+                                return episode; // Use the updated episode
+                            } else {
+                                return ep; // Use the unchanged episodes
+                            }
+                        });
+            
+                        // Update the userData with the updated Twilight Zone episodes
+                        userData.twilightZone = updatedTwilightZone;
+            
+                        // Send the updated userData back to the server
+                        fetch(`http://localhost:3000/users/${currentUserNumber}`, {
+                            method: 'PATCH',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(userData)
+                        })
 
                         
                         // twilightList.textContent = ''

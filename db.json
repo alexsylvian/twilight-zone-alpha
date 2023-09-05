@@ -11,7 +11,17 @@
           "image_url": "https://m.media-amazon.com/images/M/MV5BMjM4NzA0OTMyNF5BMl5BanBnXkFtZTgwMDA2OTEyMjE@._V1_.jpg",
           "synopsis": "A man finds himself completely alone in a town that looks recently lived in.",
           "rating": 7,
-          "review": "A great start to a great show."
+          "review": "A great start to a great show.",
+          "comments": [
+            {
+              "author": "Isaac",
+              "comment": "This one's so good"
+            },
+            {
+              "author": "Lazer",
+              "comment": "banger episode fr"
+            }
+          ]
         },
         {
           "id": 2,
