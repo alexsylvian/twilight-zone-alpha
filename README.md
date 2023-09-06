@@ -1,14 +1,10 @@
-# twilight-zone-alpha
+# Twilight Watcher
 
-Foobar is a Python library for dealing with word pluralization.
+Twilight Watcher is an app for collaborative viewings of film or tv shows, in this case The Twilight Zone
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
-```bash
-pip install foobar
-```
+To use, clone the github package and run [twilight.html](twilight.html).
 
 ## Usage
 
