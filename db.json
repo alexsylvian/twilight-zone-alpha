@@ -52,7 +52,7 @@
           "number": 103,
           "title": "Mr. Denton on Domsday",
           "image_url": "https://m.media-amazon.com/images/M/MV5BMDk2MjIxYjctZjIwMS00NjI2LWJjZGUtMmNhNGZlYmY4N2JlXkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
-          "synopsis": "A shut-in has-been actress is obsessed with her old movies.",
+          "synopsis": "In the Old West, a quick-draw duelist is scared of a new challenger, but is offered a special potion that will make him the best shooter for 10 seconds.",
           "rating": 6,
           "review": "Martin Landau's so good in this.",
           "id": 3
@@ -91,6 +91,21 @@
           "synopsis": "A sidewalk salesman is visited by Death. When he refuses to go, Death decides to take a little girl at midnight instead.",
           "rating": 7,
           "review": "Isaac says bad."
+        },
+        {
+          "number": 103,
+          "title": "Mr. Denton on Domsday",
+          "image_url": "https://m.media-amazon.com/images/M/MV5BMDk2MjIxYjctZjIwMS00NjI2LWJjZGUtMmNhNGZlYmY4N2JlXkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
+          "synopsis": "In the Old West, a quick-draw duelist is scared of a new challenger, but is offered a special potion that will make him the best shooter for 10 seconds.",
+          "rating": "6",
+          "review": "Kinda boring tbh",
+          "id": 3,
+          "comments": [
+            {
+              "author": "Alex",
+              "comment": "martin landau was good though!"
+            }
+          ]
         }
       ]
     },

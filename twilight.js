@@ -253,7 +253,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function addCommentToJSON(e, newCommentObject){
             const episodeID = e.target.parentElement.id
-            // console.log(episodeID)
             fetch(`http://localhost:3000/users/${currentUserNumber}`)
             .then(res => res.json())
             .then(userData => {
@@ -262,9 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (!episode.comments) {
                             episode.comments = []
                         }
-                        console.log(episode.comments)
                         episode.comments.push(newCommentObject)
-                        console.log(episode.comments)
 
                         const updatedTwilightZone = userData.twilightZone.map(ep => {
                             if (ep.number === parseInt(episodeID)) {
