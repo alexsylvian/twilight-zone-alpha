@@ -24,6 +24,14 @@
             {
               "author": "Alex",
               "comment": "yeah it really was so good."
+            },
+            {
+              "author": "Lazer",
+              "comment": "amazing"
+            },
+            {
+              "author": "Lazer",
+              "comment": "i loved it"
             }
           ]
         },
@@ -96,6 +104,24 @@
           "rating": "8",
           "review": "Jack Warden was such a good actor, one of the 12 Angry Men jurors",
           "id": 8
+        },
+        {
+          "number": 108,
+          "title": "Time Enough At Last",
+          "image_url": "https://thenightgallery.files.wordpress.com/2016/07/timeenough15.jpg",
+          "synopsis": "A man who loves reading living in a world that hates it is the sole survivor of a nuclear blast.",
+          "rating": "10",
+          "review": "Gonna be honest, I knew the twist to this one before I saw it, still hits very hard.",
+          "id": 8
+        },
+        {
+          "number": 109,
+          "title": "Perchance To Dream",
+          "image_url": "https://m.media-amazon.com/images/M/MV5BMTBjM2Q2ZTctODM4MC00OGEyLWJmZDYtOGVkM2MyZjNmZDljXkEyXkFqcGdeQXVyNDAyMjk2NDI@._V1_.jpg",
+          "synopsis": "A man with a heart condition visits a psychiatrist to talk about dreams of a woman who tries to kill him by taking him on amusement park rides.",
+          "rating": "9",
+          "review": "very scary episode with a great premise and twist, very well written.",
+          "id": 9
         }
       ],
       "author": "Alex",
