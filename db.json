@@ -10,7 +10,7 @@
           "title": "Where Is Everybody?",
           "image_url": "https://m.media-amazon.com/images/M/MV5BMjM4NzA0OTMyNF5BMl5BanBnXkFtZTgwMDA2OTEyMjE@._V1_.jpg",
           "synopsis": "A man finds himself completely alone in a town that looks recently lived in.",
-          "rating": 7,
+          "rating": 10,
           "review": "A great start to a great show.",
           "comments": [
             {
@@ -53,7 +53,7 @@
           "title": "Mr. Denton on Domsday",
           "image_url": "https://m.media-amazon.com/images/M/MV5BMDk2MjIxYjctZjIwMS00NjI2LWJjZGUtMmNhNGZlYmY4N2JlXkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
           "synopsis": "In the Old West, a quick-draw duelist is scared of a new challenger, but is offered a special potion that will make him the best shooter for 10 seconds.",
-          "rating": 6,
+          "rating": 7,
           "review": "Martin Landau's so good in this.",
           "id": 3
         },
@@ -62,9 +62,36 @@
           "title": "The Sixteen-Millimeter Shrine",
           "image_url": "https://m.media-amazon.com/images/M/MV5BZTk3NzgyMTUtY2E2MS00NjcwLTgyOGQtN2Y2OTY3YzAzYmJiXkEyXkFqcGdeQXVyNjUxMjc1OTM@._V1_.jpg",
           "synopsis": "A shut-in has-been actress is obsessed with her old movies.",
-          "rating": 8,
+          "rating": 9,
           "review": "Can you imagine the guys who had to go ask Ida Lupino if she could play an old has-been actress?",
           "id": 4
+        },
+        {
+          "number": 105,
+          "title": "Walking Distance",
+          "image_url": "https://m.media-amazon.com/images/M/MV5BNjZjMGUwNmYtNzM4NS00NDI5LTkzMTMtYzEyNzQzOTQ0ZWUxL2ltYWdlXkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
+          "synopsis": "A man returning to his old home town realizes that he's traveled back in time to the world of his childhood.",
+          "rating": "10",
+          "review": "This episode really made me cry, it's so good.",
+          "id": 5
+        },
+        {
+          "number": 106,
+          "title": "Escape Clause",
+          "image_url": "https://m.media-amazon.com/images/M/MV5BMDc3MzAzN2MtYTU3OC00ZTI0LWFkYTctNDljOGU5MzQ3NjY3XkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
+          "synopsis": "A hypochondriac makes a Deal with the Devil for immortality, but becomes bored when his death-defying stunts lose their luster.",
+          "rating": 5,
+          "review": "Probably the weakest episode so far, just a terrible script.",
+          "id": 6
+        },
+        {
+          "number": 107,
+          "title": "The Lonely",
+          "image_url": "https://m.media-amazon.com/images/M/MV5BM2RhODIxYzYtMjU4NS00NzdlLTg4YjItY2UwNjgzYTAzNzhmXkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg",
+          "synopsis": "A convict in solitary confinement on an asteroid is given a robot woman for companionship, but soon believes she's a real woman, and when he receives a pardon, has to deal with leaving her behind.",
+          "rating": "8",
+          "review": "Jack Warden was such a good actor, one of the 12 Angry Men jurors",
+          "id": 8
         }
       ],
       "author": "Alex",
