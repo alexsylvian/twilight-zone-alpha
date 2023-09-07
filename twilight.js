@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let episodeCardCommentsNumber = episodeCard.querySelector(`#comments-${episodeCard.id}`)
 
             if (episodeCardCommentsNumber){
-                console.log('')
+                episodeCardCommentsNumber.textContent = 'Hide Comments'
             }else{
                 let episodeCardCommentsNumber = document.createElement('p')
                 episodeCardCommentsNumber.id = `comments-${episodeCard.id}`
