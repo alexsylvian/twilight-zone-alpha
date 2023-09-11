@@ -4,7 +4,7 @@ Twilight Watcher is an app for collaborative viewings of film or tv shows, in th
 
 ## Installation
 
-To use, clone the github package and run 'explorer.exe twilight.html' in the terminal. Use the JSON server [(found here)](https://www.npmjs.com/package/json-server) to initialize the db.json.
+To use, clone the github package and cd into the file, and run 'explorer.exe twilight.html' in the terminal. Use the JSON server [(found here)](https://www.npmjs.com/package/json-server) to initialize the db.json by running json-server --watch db.json.
 
 ## Usage
 

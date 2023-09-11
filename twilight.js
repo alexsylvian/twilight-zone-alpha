@@ -6,11 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const addEpisodeButton = document.getElementById('episode-adder')
     const episodeSubmitterForm = document.getElementById('new-episode-submitter')
     const episodeFinderForm = document.getElementById('episode-finder')
+    const episodeFinderHideAdvice = document.getElementById('hide-finder-advice')
 
     let currentUserNumber = 1
     alexButton.disabled = true
 
     episodeSubmitterForm.style.display = 'none'
+    episodeFinderHideAdvice.style.display = 'none'
 
     addEpisodeButton.addEventListener('click', () => {
         if (episodeSubmitterForm.style.display === 'none'){
@@ -33,8 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderEpisode(episode){
-        let numberOfComments = 1
-
         let episodeCard = document.createElement('li')
         episodeCard.className = "episode-card"
         episodeCard.id = parseInt(episode.number)
@@ -386,7 +386,8 @@ document.addEventListener('DOMContentLoaded', () => {
     episodeFinderForm.addEventListener('submit', (e) => {
         e.preventDefault()
         findEpisode()
-        episodeFinderForm.querySelector('#finder-episode').value = ''
+        episodeFinderForm.reset()
+        episodeFinderHideAdvice.style.display = 'block'
     })
 
     function findEpisode(){
@@ -413,11 +414,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     setTimeout(() => {
                         twilightList.textContent = ''
                         renderEpisodeList()
+                        episodeFinderHideAdvice.style.display = 'none'
                     }, 5000);
                 }
             }
         })
     }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'r' && e.ctrlKey){
+        twilightList.innerText = ''
+        renderEpisodeList()
+        }
+    })
 
     renderEpisodeList()
 })
